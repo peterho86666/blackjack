@@ -1,0 +1,602 @@
+//Challenge 1:Your Age in Days
+
+function ageInDays(){
+var birthYear = prompt('What year were you born...Good friend');
+var ageInDayss = (2018 - birthYear) * 365;
+
+var h1 = document.createElement('h1');
+var textAnswer = document.createTextNode('You are ' + ageInDayss + ' days old');
+h1.setAttribute('id','ageInDays');
+h1.appendChild(textAnswer);
+document.getElementById('flex-box-result').appendChild(h1);
+}
+
+function reset(){
+    document.getElementById('ageInDays').remove();
+}
+
+// Challenge 2: Cat Generator
+function generateCat(){
+    var image = document.createElement('img');
+    var div = document.getElementById('flex-cat-gen');
+    image.src="http://thecatapi.com/api/images/get?format=src&type=gif&size=small" 
+    div.appendChild(image);
+}
+
+// Challenge 3: Rock, Paper, Scissors
+
+function rpsGame(yourChoice){
+    
+    console.log(yourChoice);
+    var humanChoice, botChoice;
+    var humanChoice = yourChoice.id;
+}
+
+botChoice = numberToChoice(randToRpsInt());
+console.log('Computer choice:', botChoice);
+
+//results = decideWinner(humanChoice, botChoice);
+//console.log(results);
+
+//message = finalMessage(results);
+//console.log(message);
+
+//rpsFrontEnd(yourChoice.id, botChoice, message);
+
+function randToRpsInt(){
+    return Math.floor(Math.random() * 3);
+}
+
+function numberToChoice(number){
+    return['rock','paper','scissors'][number]
+}
+
+//function rpsGame(botChoice){
+//    botChoice = numberToChoice(randToRpsInt());
+//    console.log(botChoice);
+//}
+
+function decideWinner(yourChoice, computerChoice){
+    var rpsDatabase = {
+        'rock': {'scissors': 1, 'rock': 0.5,'paper': 0},
+        'paper': {'rock': 1, 'paper': 0.5, 'scissors': 0},
+        'scissors': {'paper': 1, 'scissors': 0.5, 'rock': 0}
+    }
+
+var yourScore = rpsDatabase[yourChoice].computerChoice;
+
+function finalMessage[yourScore, computerScore]{
+if(yourScore === 0){
+        return{'message': 'You Lost!' 'color'='red'};
+}elseif(yourScore === 1{
+        return{'message': 'You Won!' 'color'='blue'};
+}else{
+        return{'message': 'You Tied!' 'color'='black';
+    }
+}
+
+function rpsFrontend[humanImgChoice, botImgChoice]{
+    var ImgDatabase = {
+        'rock' : document.getElementById('rock').src,
+        'paper' : document.getElementById('paper').src
+        'scissors' : document.getElementById('scissors').src
+      }
+  }
+
+
+  // remove all the images
+
+  document.getElementById('rock').remove();
+  document.getElementById('paper').remove();
+  document.getElementById('scissors').remove();
+
+  //create 3 elements in 3 divs
+
+  var humanDiv = document.createElement('div');
+  var botDiv = document.createElement('div');
+  var messageDiv = document.createElement('div');
+
+  humanDiv.innerHTML = "<img src='" + ImgDatabase[humanImgChoice] + "' height=150 width=150 style='box-shadow: 0px 10px 50px rgba(37, 58, 233, 1);'>"
+  messageDiv.innerHTML = "<h1 style='color: "+ finalMessage['color'] + "; font-size: 60px; padding: 30px; '>" + finalMessage['message'] + "</h1>"
+  botDiv.innerHTML = "<img src='" + ImgDatabase[botImgChoice] + "' height=150 width=150 style='box-shadow: 0px 10px 40px rgba(243, 38, 24, 1);'>"
+
+document.getElementById('flex-box-rps-div').appendChild(humanDiv);
+document.getElementById('flex-box-rps-div').appendChild(messageDiv);
+document.getElementById('flex-box-rps-div').appendChild(botDiv);
+
+}
+
+
+
+
+
+
+
+
+//div div div
+
+
+
+
+/*
+
+function decide(){
+
+var tied = (rpsGame(yourChoice).humanChoice == rpsGame(botChoice));
+
+
+var won = ((rpsGame(yourChoice).humanChoice == numberToChoice(0)) && (rpsGame(yourChoice).humanChoice == numberToChoice(2)) && (rpsGame(yourChoice).humanChoice == numberToChoice(1)) && (rpsGame(botChoice)==numberToChoice(0)) && (rpsGame(yourChoice).humanChoice == numberToChoice(2)) && (rpsGame(botChoice)==numberToChoice(1)));
+
+
+var lose = ((rpsGame(yourChoice.humanChoice) == numberToChoice(0)) && (rpsGame(yourChoice).humanChoice == numberToChoice(1)) && (rpsGame(yourChoice).humanChoice == numberToChoice(1)) && (rpsGame(botChoice)==numberToChoice(2)) && (rpsGame(yourChoice).humanChoice == numberToChoice(2)) && (rpsGame(botChoice)==numberToChoice(0)));
+}
+
+    switch(decide){
+
+        case won:               var h1 = document.createElement('h1');
+                                var textAnswer = document.createTextNode('You Won!');
+                                h1.appendChild(textAnswer);
+                                h1.setAttribute('id','won');
+                                document.getElementById('flex-box-rps-div').appendChild(h1);
+                                break;
+
+        case tied:             var h1 = document.createElement('h1');
+                                var textAnswer = document.createTextNode('You Tied!');    
+                                h1.appendChild(textAnswer);
+                                h1.setAttribute('id','tied');
+                                document.getElementById('flex-box-rps-div').appendChild(h1);
+                                break;
+    
+        case lose:               var h1 = document.createElement('h1');
+                                var textAnswer = document.createTextNode('You Lose!');
+                                h1.appendChild(textAnswer);
+                                h1.setAttribute('id','lose');
+                                document.getElementById('flex-box-rps-div').appendChild(h1);              
+                                break;
+    }
+}
+
+//message = finalMesage(results);
+
+//rpsFrontEnd(yourChoice.id, botChoice, message);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*function results(){
+    if(rpsGame(yourChoice) == rpsGame(botChoice)){
+        var h1 = document.createElement('h1');
+        var textAnswer = document.createTextNode('You Tied!');    
+        h1.appendChild(textAnswer);
+        document.getElementById('flex-box-rps-div').appendChild(h1);
+    }
+
+    elseif((rpsGame(yourChoice) == numberToChoice(0)) && (rpsGame(yourChoice) == numberToChoice(2)) || (rpsGame(yourChoice) == numberToChoice(1)) && (rpsGame(botChoice)==numberToChoice(0)) || (rpsGame(yourChoice) == numberToChoice(2)) && (rpsGame(botChoice)==numberToChoice(1))){
+        var h1 = document.createElement('h1');
+        var textAnswer = document.createTextNode('You Won!');
+        h1.appendChild(textAnswer);
+        document.getElementById('flex-box-rps-div').appendChild(h1);
+    }
+        {
+
+                else(){
+                var h1 = document.createElement('h1');
+                var textAnswer = document.createTextNode('You Lost!');
+                h1.appendChild(textAnswer);
+                document.getElementById('flex-box-rps-div').appendChild(h1);
+                }
+        }
+}
+message = finalMesage(results);
+
+}
+
+
+
+//rpsFrontEnd(yourChoice.id, botChoice, message);
+
+//humanChoice = yourChoice.id;
+//botChoice = numberToChoice(randomToRpsInt());
+//console.log(botChoice);
+//results - decideWinner(humanChoice,botChoice); // 1 0 0.5 0.5 0 1
+
+//message = finalMessage(results); // {'message'; 'You Won!','color':'green'}
+
+      
+// console.log(yourChoice.src);
+
+//Math.random();
+//Math.random() * 3;
+//Math.floor();
+//Math.floor(Math.random() * 3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+function generateRock(){
+    var image= document.createElement('img');
+    var div = document.getElementById('flex-result-rock');
+    image.src="static/img/rock.jpg";
+    div.appendChild(image);
+    var h1 = document.createElement('h1');
+    var rockAnswer = document.createTextNode('You Tied!');
+    h1.appendChild(rockAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+    }
+
+function generatePaper(){
+    var image= document.createElement('img');
+    var div = document.getElementById('flex-result-paper');
+    image.src="static/img/paper.jpg";
+    div.appendChild(image);
+    var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Tied!');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+}
+
+function generateScissors(){
+    var image= document.createElement('img');
+    var div = document.getElementById('flex-result-scissors');
+    image.src="static/img/scissors.jpg";
+    div.appendChild(image);
+    var h1 = document.createElement('h1');
+    var scissorAnswer = document.createTextNode('You Tied!');
+    h1.appendChild(scissorAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+}
+*/ /*
+function generateRock(){
+document.getElementById('flex-result-paper').remove();
+document.getElementById('flex-result-scissors').remove();
+var image= document.createElement('img');
+var div = document.getElementById('flex-rock-paper-scissors');
+image.src="static/img/rock.jpg";
+div.appendChild(image);
+var h1 = document.createElement('h1');
+var paperAnswer = document.createTextNode('You Lose!');
+h1.appendChild(paperAnswer);
+document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+        }
+//var image= document.createElement('img');
+  //  var div = document.getElementById('flex-result-new');
+    //image.src="static/img/rock.jpg";
+   // div.appendChild(image);
+  /* var paper= getElementById('flex-result-paper');
+   var scissors = getElementById('flex-result-scissors');
+   var rock = getElementById('flex-result-rock');
+
+   let decide = ['paper','scissors','rock'];
+
+   var choice = decide();
+}
+*/
+/*
+  switch(choice){
+      case paper:      document.getElementById('flex-result-scissors').remove();
+                       var h1 = document.createElement('h1');
+                       var paperAnswer = document.createTextNode('You Lose!');
+                       h1.appendChild(paperAnswer);
+                       document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+                       break;
+
+      case scissors:   document.getElementById('flex-result-paper').remove();
+                       var h1 = document.createElement('h1');
+                       var scissorsAnswer = document.createTextNode('You Won!');
+                       h1.appendChild(scissorsAnswer);
+                       document.getElementById('flex-rock-paper-scissors').appendChild(h1);;
+                       break;
+
+      case rock:       document.getElementById('flex-result-paper').remove();
+                       document.getElementById('flex-result-scissors').remove();
+                       var image= document.createElement('img');
+                       var div = document.getElementById('flex-rock-paper-scissors');
+                       image.src="static/img/rock.jpg";
+                       div.appendChild(image);
+                       var h1 = document.createElement('h1');
+                       var rockAnswer = document.createTextNode('You Tied!');
+                       h1.appendChild(rockAnswer);
+                       document.getElementById('flex-rock-paper-scissors').appendChild(h1);;
+                       break;
+  }
+    /*
+   function ageInDays(){
+    var birthYear = prompt('What year were you born...Good friend');
+    var ageInDayss = (2018 - birthYear) * 365;
+    
+    var h1 = document.createElement('h1');
+    var textAnswer = document.createTextNode('You are ' + ageInDayss + ' days old');
+    h1.setAttribute('id','ageInDays');
+    h1.appendChild(textAnswer);
+    document.getElementById('flex-box-result').appendChild(h1);
+    } */
+
+    /* var h1 = document.createElement('h1');
+   var paperAnswer = document.createTextNode('You Won!');
+   h1.appendChild(paperAnswer);
+   document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+
+   var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Tied !');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+
+
+    var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Lose!');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+}
+
+function generatePaper(){
+    document.getElementById('flex-result-rock').remove();
+    document.getElementById('flex-result-scissors').remove();
+
+    var h1 = document.createElement('h1');
+   var paperAnswer = document.createTextNode('You Won!');
+   h1.appendChild(paperAnswer);
+   document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+
+   var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Tied !');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+
+
+    var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Lose!');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+}
+
+function generateScissors(){
+    document.getElementById('flex-result-rock').remove();
+    document.getElementById('flex-result-paper').remove();
+
+    var h1 = document.createElement('h1');
+   var paperAnswer = document.createTextNode('You Won!');
+   h1.appendChild(paperAnswer);
+   document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+
+   var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Tied !');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+
+
+    var h1 = document.createElement('h1');
+    var paperAnswer = document.createTextNode('You Lose!');
+    h1.appendChild(paperAnswer);
+    document.getElementById('flex-rock-paper-scissors').appendChild(h1);
+}
+*/
+/* if(humanChoice == botChoice){
+    var h1 = document.createElement('h1');
+    var textAnswer = document.createTextNode('You Tied!');
+    
+    h1.appendChild(textAnswer);
+    document.getElementById('flex-box-rps-div').appendChild(h1);
+}
+elseif((humanChoice == rock) && (botchoice == scissors) || (humanChoice==paper) && (botChoice==rock) || (humanChoice==scissors) && (botchoice==paper)){
+    var h1 = document.createElement('h1');
+    var textAnswer = document.createTextNode('You Won!');
+    h1.setAttribute('id','humanChoice');
+    h1.appendChild(textAnswer);
+    document.getElementById('flex-box-rps-div').appendChild(h1);
+}
+
+else{
+    var h1 = document.createElement('h1');
+    var textAnswer = document.createTextNode('You Lost!');
+    h1.setAttribute('id','humanChoice');
+    h1.appendChild(textAnswer);
+    document.getElementById('flex-box-rps-div').appendChild(h1);
+}
+*/
